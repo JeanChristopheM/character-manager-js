@@ -11,25 +11,71 @@
 </head>
 
 <body>
+    <div class="modal" tabindex="-1" id="exampleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Adding a new character</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <fieldset>
+                            <legend>Please enter data</legend>
+                            <div class="mb-3">
+                                <label for="nameInput" class="form-label">Name</label>
+                                <input type="text" id="nameInput" class="form-control" placeholder="Character name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="shortDescriptionInput" class="form-label">Short Description</label>
+                                <input type="text" id="shortDescriptionInput" class="form-control" placeholder="Short description">
+                            </div>
+                            <div class="mb-3">
+                                <label for="longDescriptionInput" class="form-label">Long Description</label>
+                                <input type="text" id="longDescriptionInput" class="form-control" placeholder="Long description">
+                            </div>
+                            <div class="mb-3">
+                                <label for="imageInput" class="form-label">Picture</label>
+                                <input type="file" id="imageInput" class="form-control" accept="image/png, image/jpeg">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="header py-5 text-center container">
         <h1 class="header__title">Welcome to our hero page</h1>
         <p class="header__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, veniam.</p>
-        <button class="header__button">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Add New Character
         </button>
     </header>
     <main class="main album py-5">
         <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="cardContainer">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3" id="cardContainer">
+
+
                 <template id="tpl">
                     <article class="main__article col">
-                        <h2 class="main__article__title" id="name"></h2>
-                        <figure class="main__article__figure">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="character image" id="image">
-                        </figure>
-                        <p class="main__article__description" id="shortDescription"></p>
+                        <div class="card shadow-sm p-3">
+                            <h2 class="main__article__title" id="name"></h2>
+                            <figure class="main__article__figure">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="character image" id="image">
+                            </figure>
+                            <p class="main__article__description card-text" id="shortDescription"></p>
+                            <div class="main__article__buttons">
+                                <button class="btn btn-secondary">View more</button>
+                            </div>
+                        </div>
                     </article>
                 </template>
+
+
             </div>
         </div>
     </main>

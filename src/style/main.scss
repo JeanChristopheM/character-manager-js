@@ -1,5 +1,37 @@
+@import 'vars';
+body {
+    background: $clr-bg;
+    background-repeat: no-repeat;
+}
+.header {
+    color: white;
+}
 .main {
     &__article {
-        border: 1px solid yellow;
+        margin-top: 75px;
+        .card {
+            position: relative;
+            padding-top: 50px;
+            min-height: 100%;
+            h2 {
+                margin-top: 50px;
+                text-align: center;
+            }
+            figure {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                img {
+                    border-radius: .3rem;
+                }
+            }
+            p {
+                
+            }
+            button {
+                float: right;
+            }
+        }
     }
 }

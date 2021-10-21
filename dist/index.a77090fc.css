@@ -1,4 +1,34 @@
+body {
+  background: radial-gradient(ellipse at top, #1f3756, #141539);
+  background-repeat: no-repeat;
+}
+
+.header {
+  color: white;
+}
+
 .main__article {
-  border: 1px solid yellow;
+  margin-top: 75px;
+}
+.main__article .card {
+  position: relative;
+  padding-top: 50px;
+  min-height: 100%;
+}
+.main__article .card h2 {
+  margin-top: 50px;
+  text-align: center;
+}
+.main__article .card figure {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main__article .card figure img {
+  border-radius: 0.3rem;
+}
+.main__article .card button {
+  float: right;
 }
 /*# sourceMappingURL=index.a77090fc.css.map */

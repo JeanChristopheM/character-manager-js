@@ -14,6 +14,32 @@ const app = async ()=>{
         clone.querySelector('img').src = `data:image;base64,${item.image}`;
         document.querySelector('#cardContainer').appendChild(clone);
     }
+    const manageChar = (name, shortDescription, description, image, method)=>{
+        const options = {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: {
+                name: name,
+                shortDescription: shortDescription,
+                description: description,
+                image: image
+            }
+        };
+        fetch(src, options);
+    };
+    function getDataUrl(img) {
+        // Create canvas
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        // Set width and height
+        canvas.width = img.width;
+        canvas.height = img.height;
+        // Draw the image
+        ctx.drawImage(img, 0, 0);
+        return canvas.toDataURL('image/jpeg');
+    }
 };
 app();
 
