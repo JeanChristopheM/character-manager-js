@@ -1,1 +1,1 @@
-{"mappings":"","sources":["src/style/main.scss"],"sourcesContent":[null],"names":[],"version":3,"file":"index.a77090fc.css.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"AACI;EACI","sources":["src/style/main.scss"],"sourcesContent":[".main {\n    &__article {\n        border: 1px solid red;\n    }\n}"],"names":[],"version":3,"file":"index.a77090fc.css.map","sourceRoot":"/__parcel_source_root/"}
