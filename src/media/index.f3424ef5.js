@@ -1,0 +1,2 @@
+const app=async()=>{const e="https://character-database.becode.xyz/characters/",t=await(async()=>{const t=await fetch(e);return await t.json()})();console.log(t);for(let e of t){let t=document.querySelector("#tpl"),a=document.importNode(t.content,!0);a.querySelector("h2").textContent=e.name,a.querySelector("p").textContent=e.shortDescription,a.querySelector("img").src=`data:image;base64,${e.image}`,document.querySelector("#cardContainer").appendChild(a)}};app();
+//# sourceMappingURL=index.f3424ef5.js.map
