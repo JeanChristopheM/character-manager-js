@@ -20,42 +20,16 @@
     </header>
     <main class="main album py-5">
         <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <article class="main__article col">
-                    <h2 class="main__article__title">Hero Name</h2>
-                    <figure class="main__article__figure">
-                        <img src="https://source.unsplash.com/random/100x100" alt="unsplash image">
-                    </figure>
-                    <p class="main__article__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, deleniti.</p>
-                </article>
-                <article class="main__article col">
-                    <h2 class="main__article__title">Hero Name</h2>
-                    <figure class="main__article__figure">
-                        <img src="https://source.unsplash.com/random/100x100" alt="unsplash image">
-                    </figure>
-                    <p class="main__article__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, deleniti.</p>
-                </article>
-                <article class="main__article col">
-                    <h2 class="main__article__title">Hero Name</h2>
-                    <figure class="main__article__figure">
-                        <img src="https://source.unsplash.com/random/100x100" alt="unsplash image">
-                    </figure>
-                    <p class="main__article__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, deleniti.</p>
-                </article>
-                <article class="main__article col">
-                    <h2 class="main__article__title">Hero Name</h2>
-                    <figure class="main__article__figure">
-                        <img src="https://source.unsplash.com/random/100x100" alt="unsplash image">
-                    </figure>
-                    <p class="main__article__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, deleniti.</p>
-                </article>
-                <article class="main__article col">
-                    <h2 class="main__article__title">Hero Name</h2>
-                    <figure class="main__article__figure">
-                        <img src="https://source.unsplash.com/random/100x100" alt="unsplash image">
-                    </figure>
-                    <p class="main__article__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, deleniti.</p>
-                </article>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="cardContainer">
+                <template id="tpl">
+                    <article class="main__article col">
+                        <h2 class="main__article__title" id="name"></h2>
+                        <figure class="main__article__figure">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="character image" id="image">
+                        </figure>
+                        <p class="main__article__description" id="shortDescription"></p>
+                    </article>
+                </template>
             </div>
         </div>
     </main>
