@@ -7754,7 +7754,7 @@
 93/home/becode/Documents/BeCode/character-manager-js/node_modules/events/tests/add-listeners.js1634809077228261418 0
 100/home/becode/Documents/BeCode/character-manager-js/node_modules/filesize/lib/filesize.es6.min.js.map1634809078340249691 0
 132/home/becode/Documents/BeCode/character-manager-js/node_modules/uncss/node_modules/postcss-selector-parser/dist/__tests__/postcss.js1634809080024231933 0
-74/home/becode/Documents/BeCode/character-manager-js/dist/index.a77090fc.css1634816716193028316 0
+74/home/becode/Documents/BeCode/character-manager-js/dist/index.a77090fc.css1634817026145833506 0
 100/home/becode/Documents/BeCode/character-manager-js/node_modules/core-js/stable/string/virtual/big.js1634809081400217424 0
 135/home/becode/Documents/BeCode/character-manager-js/node_modules/uncss/node_modules/postcss-selector-parser/dist/__tests__/exceptions.js1634809079608236320 0
 106/home/becode/Documents/BeCode/character-manager-js/node_modules/core-js/modules/es.typed-array.includes.js1634809082692203800 0
@@ -7837,7 +7837,7 @@
 86/home/becode/Documents/BeCode/character-manager-js/node_modules/miller-rabin/README.md1634809077168262050 0
 97/home/becode/Documents/BeCode/character-manager-js/node_modules/@parcel/reporter-cli/src/utils.js1634809079696235392 0
 86/home/becode/Documents/BeCode/character-manager-js/node_modules/node-forge/lib/oids.js1634809080844223286 0
-70/home/becode/Documents/BeCode/character-manager-js/src/html/index.html1634816684313357760 0
+70/home/becode/Documents/BeCode/character-manager-js/src/html/index.html1634817139260670359 0
 109/home/becode/Documents/BeCode/character-manager-js/node_modules/htmlnano/lib/modules/removeEmptyAttributes.js1634809079848233789 0
 86/home/becode/Documents/BeCode/character-manager-js/node_modules/xxhash-wasm/LICENSE.md1634809078612246822 0
 88/home/becode/Documents/BeCode/character-manager-js/node_modules/core-js/stable/README.md1634809084016189839 0
@@ -7987,7 +7987,7 @@
 94/home/becode/Documents/BeCode/character-manager-js/node_modules/lodash/fp/isArrayLikeObject.js1634809082752203167 0
 107/home/becode/Documents/BeCode/character-manager-js/node_modules/core-js/features/reflect/delete-metadata.js1634809082084210211 0
 90/home/becode/Documents/BeCode/character-manager-js/node_modules/is-arguments/.editorconfig1634809076676267239 0
-70/home/becode/Documents/BeCode/character-manager-js/src/style/main.scss1634816831747835662 0
+70/home/becode/Documents/BeCode/character-manager-js/src/style/main.scss1634817025293842270 0
 95/home/becode/Documents/BeCode/character-manager-js/node_modules/caniuse-lite/data/regions/RS.js1634809082936201227 0
 83/home/becode/Documents/BeCode/character-manager-js/node_modules/lodash/fp/pullAt.js1634809083212198316 0
 121/home/becode/Documents/BeCode/character-manager-js/node_modules/lmdb-store/dependencies/lmdb/libraries/liblmdb/mdb_load.c1634809080868223033 0
@@ -12685,7 +12685,7 @@
 72/home/becode/Documents/BeCode/character-manager-js/node_modules/dashdash1634809078480248214 1
 85/home/becode/Documents/BeCode/character-manager-js/node_modules/@trysound/sax/LICENSE1634809076716266817 0
 146/home/becode/Documents/BeCode/character-manager-js/node_modules/stream-browserify/node_modules/readable-stream/lib/internal/streams/buffer_list.js1634809079124241423 0
-78/home/becode/Documents/BeCode/character-manager-js/dist/index.a77090fc.css.map1634816716197028275 0
+78/home/becode/Documents/BeCode/character-manager-js/dist/index.a77090fc.css.map1634817026149833464 0
 102/home/becode/Documents/BeCode/character-manager-js/node_modules/@babel/core/lib/config/config-chain.js1634809078008253192 0
 73/home/becode/Documents/BeCode/character-manager-js/node_modules/html-tags1634809077372259899 1
 121/home/becode/Documents/BeCode/character-manager-js/node_modules/css-modules-loader-core/node_modules/postcss/package.json1634809076848265425 0
@@ -13921,7 +13921,7 @@
 126/home/becode/Documents/BeCode/character-manager-js/node_modules/@parcel/core/test/fixtures/custom-format-mismatch/package.json1634809082136209663 0
 111/home/becode/Documents/BeCode/character-manager-js/node_modules/@parcel/core/test/fixtures/main-format-mismatch1634809082220208777 1
 141/home/becode/Documents/BeCode/character-manager-js/node_modules/hash-base/node_modules/readable-stream/lib/internal/streams/stream-browser.js1634809079872233536 0
-55/home/becode/Documents/BeCode/character-manager-js/dist1634816716197028275 1
+55/home/becode/Documents/BeCode/character-manager-js/dist1634817115984909607 1
 118/home/becode/Documents/BeCode/character-manager-js/node_modules/@parcel/core/test/fixtures/targets-default-distdir-one1634809082244208524 1
 102/home/becode/Documents/BeCode/character-manager-js/node_modules/es-abstract/2017/GetOwnPropertyKeys.js1634809082260208355 0
 131/home/becode/Documents/BeCode/character-manager-js/node_modules/@parcel/core/test/fixtures/targets-default-distdir-one/package.json1634809082244208524 0
@@ -14470,7 +14470,7 @@
 102/home/becode/Documents/BeCode/character-manager-js/node_modules/iconv-lite/encodings/tables/eucjp.json1634809079748234843 0
 102/home/becode/Documents/BeCode/character-manager-js/node_modules/core-js/stable/typed-array/for-each.js1634809083300197388 0
 96/home/becode/Documents/BeCode/character-manager-js/node_modules/core-js/features/string/small.js1634809083800192117 0
-66/home/becode/Documents/BeCode/character-manager-js/dist/index.html1634816684401356850 0
+66/home/becode/Documents/BeCode/character-manager-js/dist/index.html1634817115984909607 0
 112/home/becode/Documents/BeCode/character-manager-js/node_modules/@babel/types/lib/builders/generated/uppercase.js1634809079844233832 0
 87/home/becode/Documents/BeCode/character-manager-js/node_modules/@parcel/diagnostic/test1634809078824244587 1
 108/home/becode/Documents/BeCode/character-manager-js/node_modules/@babel/types/lib/builders/generated/index.js1634809079704235307 0
