@@ -35,7 +35,62 @@ const app = async () => {
             moreDetailsModal.querySelector('#detailsPicture').src = `data:image;base64,${dbEntry.image}`;
         })
     }
-    const easyMDE = new EasyMDE({element: document.getElementById('longDescriptionInput')});
+    const easyMDE = new EasyMDE({
+        toolbar: [
+            {
+                name: "bold",
+                action: EasyMDE.toggleBold,
+                className: "fa fa-bold",
+                title: "Bold",
+            },
+            {
+                name: "italics",
+                action: EasyMDE.toggleItalic,
+                className: "fa fa-italic",
+                title: "Italic"
+            },
+            {
+                name: "heading",
+                action: EasyMDE.toggleHeadingSmaller,
+                className: "fa fa-header",
+                title: "Heading"
+            },
+            "|", // Separator
+            {
+                name: "quote",
+                action: EasyMDE.toggleBlockquote,
+                className: "fa fa-quote-left",
+                title: "Quote"
+            },
+            {
+                name: "unordered-list",
+                action: EasyMDE.toggleUnorderedList,
+                className: "fa fa-list-ul",
+                title: "Unordered List"
+            },
+            {
+                name: "ordered-list",
+                action: EasyMDE.toggleOrderedList,
+                className: "fa fa-list-ol",
+                title: "Ordered List"
+            },
+            {
+                name: "table",
+                action: EasyMDE.drawTable,
+                className: "fa fa-table",
+                title: "Table"
+            },
+            "|",
+            {
+                name: "guide",
+                action: "https://www.markdownguide.org/basic-syntax/",
+                className: "fa fa-question-circle",
+                title: "Guide"
+            }
+            // [, ...]
+        ],
+        element: document.getElementById('longDescriptionInput')
+    });
 
     let imgInput = document.querySelector('#imageInput');
     imgInput.addEventListener('change', function (e) {
