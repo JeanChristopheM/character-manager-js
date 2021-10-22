@@ -1,0 +1,59 @@
+body {
+  background: radial-gradient(ellipse at top, #1f3756, #141539);
+  background-repeat: no-repeat;
+}
+
+.header {
+  color: white;
+}
+
+.main__article {
+  margin-top: 75px;
+}
+
+.main__article .card {
+  position: relative;
+  padding-top: 50px;
+  min-height: 100%;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
+.main__article .card:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+
+.main__article .card h2 {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.main__article .card figure {
+  position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.main__article .card figure img {
+  border-radius: .3rem;
+}
+
+.main__article .card p {
+  margin-bottom: 3.5rem;
+}
+
+.main__article .card button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+/*# sourceMappingURL=main.css.map */

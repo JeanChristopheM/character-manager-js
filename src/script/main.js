@@ -1,3 +1,4 @@
+import * as buttonIds from './modules/buttonIds.mjs';
 const app = async () => {
     const src = "https://character-database.becode.xyz/characters/";
     const getData = async () => {
@@ -40,5 +41,7 @@ const app = async () => {
         ctx.drawImage(img, 0, 0);
         return canvas.toDataURL('image/jpeg');
     }
+
+    buttonIds.initialize();
 }    
 app();
