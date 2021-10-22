@@ -1,4 +1,6 @@
 import * as dbHandling from './modules/dbHandling.mjs';
+const showdown = window.showdown;
+const converter = new showdown.Converter();
 const app = async () => {
     const moreDetailsModal = document.querySelector('#moreInfoModal');
     const database = await dbHandling.getData();
@@ -33,6 +35,8 @@ const app = async () => {
             moreDetailsModal.querySelector('#detailsPicture').src = `data:image;base64,${dbEntry.image}`;
         })
     }
+    const easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
+
     let imgInput = document.querySelector('#imageInput');
     imgInput.addEventListener('change', function (e) {
         if (e.target.files) {
@@ -63,10 +67,12 @@ const app = async () => {
         let newChar = {};
         newChar.name = document.querySelector('#nameInput').value;
         newChar.shortDescription = document.querySelector('#shortDescriptionInput').value;
-        newChar.description = document.querySelector('#longDescriptionInput').value;
+        let mdText = easyMDE.value();
+        let htmlText = converter.makeHtml(mdText)
+        newChar.description = htmlText;
+
         let newSrc = document.querySelector('#preview').src;
         newChar.image = newSrc.slice(22, newSrc.length);
-        console.log(newChar);
         dbHandling.manageChar(newChar, 'POST');
     });
     document.querySelector('#deleteCharBtn').addEventListener('click', () => {
