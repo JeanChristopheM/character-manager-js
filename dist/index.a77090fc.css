@@ -41,4 +41,12 @@ body {
   bottom: 1rem;
   right: 1rem;
 }
+
+#moreInfoModal legend {
+  display: flex;
+  justify-content: center;
+}
+#moreInfoModal legend img {
+  border-radius: 0.3rem;
+}
 /*# sourceMappingURL=index.a77090fc.css.map */

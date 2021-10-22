@@ -459,60 +459,85 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"If2QX":[function(require,module,exports) {
-var _buttonIdsMjs = require("./modules/buttonIds.mjs");
+var _dbHandlingMjs = require("./modules/dbHandling.mjs");
 const app = async ()=>{
-    const src = "https://character-database.becode.xyz/characters/";
-    const getData = async ()=>{
-        const data = await fetch(src);
-        return await data.json();
-    };
-    const database = await getData();
-    console.log(database);
+    const moreDetailsModal = document.querySelector('#moreInfoModal');
+    const database = await _dbHandlingMjs.getData();
     for (let item of database){
         let tpl = document.querySelector('#tpl');
         let clone = document.importNode(tpl.content, true);
         clone.querySelector('h2').textContent = item.name;
         clone.querySelector('p').textContent = item.shortDescription;
         clone.querySelector('img').src = `data:image;base64,${item.image}`;
+        clone.querySelector('button').id = item.id;
         document.querySelector('#cardContainer').appendChild(clone);
     }
-    const manageChar = (name, shortDescription, description, image, method)=>{
-        const options = {
+    const getSpecificPost = (id)=>{
+        let match;
+        for (let item of database)if (item.id === id) match = item;
+        return match;
+    };
+    for (let item1 of document.querySelectorAll('.viewMore'))item1.addEventListener('click', ()=>{
+        let id = item1.id;
+        let dbEntry = getSpecificPost(id);
+        moreDetailsModal.children[0].id = id;
+        moreDetailsModal.querySelector('.titleName').textContent = dbEntry.name;
+        moreDetailsModal.querySelector('#detailsName').textContent = dbEntry.name;
+        moreDetailsModal.querySelector('#detailsShortDescription').textContent = dbEntry.shortDescription;
+        moreDetailsModal.querySelector('#detailsLongDescription').innerHTML = dbEntry.description;
+        moreDetailsModal.querySelector('#detailsPicture').src = `data:image;base64,${dbEntry.image}`;
+    });
+    document.querySelector('#submitNewChar').addEventListener('click', ()=>{
+        let newChar = {
+        };
+        newChar.name = document.querySelector('#nameInput').value;
+        newChar.shortDescription = document.querySelector('#shortDescriptionInput').value;
+        newChar.description = document.querySelector('#longDescriptionInput').value;
+        //newChar.image = document.querySelector('#imageInput').files[0];
+        console.log(newChar);
+        _dbHandlingMjs.manageChar(newChar, 'POST');
+    });
+    document.querySelector('#deleteCharBtn').addEventListener('click', ()=>{
+        let id = moreDetailsModal.children[0].id;
+        _dbHandlingMjs.manageChar(id, 'DELETE');
+    });
+};
+app();
+
+},{"./modules/dbHandling.mjs":"4rguG"}],"4rguG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getData", ()=>getData
+);
+parcelHelpers.export(exports, "manageChar", ()=>manageChar
+);
+const src = "https://character-database.becode.xyz/characters";
+const getData = async ()=>{
+    const data = await fetch(src);
+    return await data.json();
+};
+const manageChar = async (charObj, method)=>{
+    let source;
+    let deleteSource = src.concat('/', charObj);
+    let options;
+    if (method === "DELETE") {
+        source = deleteSource;
+        options = {
+            method: method
+        };
+    } else {
+        source = src;
+        options = {
             method: method,
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: {
-                name: name,
-                shortDescription: shortDescription,
-                description: description,
-                image: image
-            }
+            body: JSON.stringify(charObj)
         };
-        fetch(src, options);
-    };
-    function getDataUrl(img) {
-        // Create canvas
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        // Set width and height
-        canvas.width = img.width;
-        canvas.height = img.height;
-        // Draw the image
-        ctx.drawImage(img, 0, 0);
-        return canvas.toDataURL('image/jpeg');
     }
-    _buttonIdsMjs.initialize();
-};
-app();
-
-},{"./modules/buttonIds.mjs":"khkKX"}],"khkKX":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "initialize", ()=>initialize
-);
-const initialize = ()=>{
-    console.log('initializing button ids');
+    let response = await fetch(source, options);
+    let data = await response;
+    console.log(data);
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {

@@ -56,4 +56,17 @@ body {
   bottom: 1rem;
   right: 1rem;
 }
+
+#moreInfoModal legend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#moreInfoModal legend img {
+  border-radius: .3rem;
+}
 /*# sourceMappingURL=main.css.map */

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="modal" tabindex="-1" id="newCharacterModal">
+    <div class="modal fade" tabindex="-1" id="newCharacterModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -43,46 +43,60 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="submitNewChar">Submit</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal" tabindex="-1" id="moreInfoModal">
+    <div class="modal fade" tabindex="-1" id="moreInfoModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">More details about ***</h5>
+                    <h5 class="modal-title">More details about <span class="titleName"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
                         <fieldset>
-                            <legend>id</legend>
+                            <legend>
+                                <figure>
+                                    <img id="detailsPicture" src="https://source.unsplash.com/random/100x100" alt="detailed hero image">
+                                </figure>
+                            </legend>
                             <div class="mb-3">
                                 <h4>Name</h4>
-                                <p>John Wick</p>
+                                <p id="detailsName">John Wick</p>
                             </div>
                             <div class="mb-3">
                                 <h4>Short Description</h4>
-                                <p>A hero</p>
+                                <p id="detailsShortDescription">A hero</p>
                             </div>
                             <div class="mb-3">
                                 <h4>Long Description</h4>
-                                <p>A reaaaaal badass hero</p>
-                            </div>
-                            <div class="mb-3">
-                                <h4>Picture</h4>
-                                <figure>
-                                    <img src="https://source.unsplash.com/random/100x100" alt="detailed hero image">
-                                </figure>
+                                <p id="detailsLongDescription">A reaaaaal badass hero</p>
                             </div>
                         </fieldset>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal">Edit</button>
+                    <button type="submit" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="deleteModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Deleting</h5>
+                </div>
+                <div class="modal-body">
+                    <h6>Are you sure ?</h6>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-toggle="modal" id="deleteCharBtn">yes</button>
+                    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#moreInfoModal">no</button>
                 </div>
             </div>
         </div>
@@ -108,7 +122,7 @@
                             </figure>
                             <p class="main__article__description card-text" id="shortDescription"></p>
                             <div class="main__article__buttons">
-                                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#moreInfoModal">View more</button>
+                                <button class="btn btn-secondary viewMore" data-bs-toggle="modal" data-bs-target="#moreInfoModal">View more</button>
                             </div>
                         </div>
                     </article>
