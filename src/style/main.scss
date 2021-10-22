@@ -68,3 +68,19 @@ body {
         }
     }
 }
+#editingModal {
+    #modifyingPreviewFigure {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        img {
+            border-radius: .3rem;
+        }
+        p {
+            margin-top: 1rem;
+            font-size: .7rem;
+            flex: 1 0 100%;
+        }
+    }
+}

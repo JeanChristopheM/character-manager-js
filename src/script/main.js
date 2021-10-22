@@ -207,7 +207,8 @@ const app = async () => {
         modifyingModal.querySelector('#modifyingNameTitle').textContent = dbEntry.name;
         modifyingModal.querySelector('#modifyingName').value = dbEntry.name;
         modifyingModal.querySelector('#modifyingShortDescription').value = dbEntry.shortDescription;
-        modifyingModal.querySelector('#modifyingLongDescription').textContent = dbEntry.description;
+        modifyingMDE.value(converter.makeMarkdown(dbEntry.description));
+        //modifyingMDE.cm.refresh();
         modifyingModal.querySelector('#modifyingPreview').src = `data:image;base64,${dbEntry.image}`;
     });
 }    
