@@ -35,7 +35,7 @@ const app = async () => {
             moreDetailsModal.querySelector('#detailsPicture').src = `data:image;base64,${dbEntry.image}`;
         })
     }
-    const easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
+    const easyMDE = new EasyMDE({element: document.getElementById('longDescriptionInput')});
 
     let imgInput = document.querySelector('#imageInput');
     imgInput.addEventListener('change', function (e) {
