@@ -487,13 +487,39 @@ const app = async ()=>{
         moreDetailsModal.querySelector('#detailsLongDescription').innerHTML = dbEntry.description;
         moreDetailsModal.querySelector('#detailsPicture').src = `data:image;base64,${dbEntry.image}`;
     });
+    let imgInput = document.querySelector('#imageInput');
+    imgInput.addEventListener('change', function(e) {
+        if (e.target.files) {
+            let imageFile = e.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var img = document.createElement("img");
+                img.onload = function(event) {
+                    // Dynamically create a canvas element
+                    var canvas = document.createElement("canvas");
+                    canvas.width = 100;
+                    canvas.height = 100;
+                    // var canvas = document.getElementById("canvas");
+                    var ctx = canvas.getContext("2d");
+                    // Actual resizing
+                    ctx.drawImage(img, 0, 0, 100, 100);
+                    // Show resized image in preview element
+                    var dataurl = canvas.toDataURL("image/jpg", 0.7);
+                    document.getElementById("preview").src = dataurl;
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(imageFile);
+        }
+    });
     document.querySelector('#submitNewChar').addEventListener('click', ()=>{
         let newChar = {
         };
         newChar.name = document.querySelector('#nameInput').value;
         newChar.shortDescription = document.querySelector('#shortDescriptionInput').value;
         newChar.description = document.querySelector('#longDescriptionInput').value;
-        //newChar.image = document.querySelector('#imageInput').files[0];
+        let newSrc = document.querySelector('#preview').src;
+        newChar.image = newSrc.slice(22, newSrc.length);
         console.log(newChar);
         _dbHandlingMjs.manageChar(newChar, 'POST');
     });
@@ -538,6 +564,7 @@ const manageChar = async (charObj, method)=>{
     let response = await fetch(source, options);
     let data = await response;
     console.log(data);
+    window.location.reload();
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {

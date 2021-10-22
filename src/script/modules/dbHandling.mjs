@@ -9,7 +9,7 @@ const manageChar = async (charObj, method) => {
     let source;
     let deleteSource = src.concat('/', charObj);
     let options;
-    
+
     if (method === "DELETE") {
         source = deleteSource;
         options = {method: method};
@@ -26,6 +26,7 @@ const manageChar = async (charObj, method) => {
     let response = await fetch(source, options);
     let data = await response;
     console.log(data);
+    window.location.reload();
 }
 
 export { getData, manageChar };
