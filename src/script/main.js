@@ -95,13 +95,13 @@ searchBar.addEventListener('keyup', (e) => {
 
     console.log(e);
 
-    const filteredCharacters = hpCharacters.filter((character) => {
+    /* const filteredCharacters = hpCharacters.filter((character) => {
         return (
             character.name.toLowerCase().includes(searchString) ||
             character.house.toLowerCase().includes(searchString)
         );
     });
-    displayCharacters(filteredCharacters);
+    displayCharacters(filteredCharacters); */
 });
 
 

@@ -539,11 +539,13 @@ const searchBar = document.getElementById('searchBar');
 searchBar.addEventListener('keyup', (e)=>{
     const searchString = e.target.value.toLowerCase();
     console.log(e);
-    const filteredCharacters = hpCharacters.filter((character)=>{
-        return character.name.toLowerCase().includes(searchString) || character.house.toLowerCase().includes(searchString);
+/* const filteredCharacters = hpCharacters.filter((character) => {
+        return (
+            character.name.toLowerCase().includes(searchString) ||
+            character.house.toLowerCase().includes(searchString)
+        );
     });
-    displayCharacters(filteredCharacters);
-});
+    displayCharacters(filteredCharacters); */ });
 
 },{"./modules/dbHandling.mjs":"4rguG"}],"4rguG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
