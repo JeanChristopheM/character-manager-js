@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Maker 3000</title>
-    <link rel="icon" href="/media/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.1a4d304b.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style/main.scss">
+    <link rel="stylesheet" href="/index.a77090fc.css">
 
 
 
@@ -22,12 +22,7 @@
 <header>
 
     <div id="searchWrapper">
-        <input
-            type="text"
-            name="searchBar"
-            id="searchBar"
-            placeholder="search for a character"
-        />
+        <input type="text" name="searchBar" id="searchBar" placeholder="search for a character">
     </div>
 </header>
 <body>
@@ -57,10 +52,7 @@
                             <div class="mb-3">
                                 <label for="imageInput" class="form-label">Picture</label>
                                 <input type="file" id="imageInput" class="form-control" accept="image/png, image/jpeg">
-                                <figure id="previewFigure">
-                                    <img id="preview">
-                                    <p>Please put an image with an aspect ratio of 1:1, otherwise the image will get skewed.</p>
-                                </figure>
+                                <img id="preview">
                             </div>
                         </fieldset>
                     </form>
@@ -68,47 +60,6 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="submitNewChar">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" tabindex="-1" id="editingModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modifying <span id="modifyingNameTitle"></span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <fieldset>
-                            <legend>Please enter data</legend>
-                            <div class="mb-3">
-                                <label for="nameInput" class="form-label">Name</label>
-                                <input type="text" id="modifyingName" class="form-control" placeholder="Character name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="shortDescriptionInput" class="form-label">Short Description</label>
-                                <input type="text" id="modifyingShortDescription" class="form-control" placeholder="Short description">
-                            </div>
-                            <div class="mb-3">
-                                <label for="longDescriptionInput" class="form-label">Long Description</label>
-                                <textarea id="modifyingLongDescription"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="imageInput" class="form-label">Picture</label>
-                                <input type="file" id="modifyingImage" class="form-control" accept="image/png, image/jpeg">
-                                <figure id="modifyingPreviewFigure">
-                                    <img id="modifyingPreview">
-                                    <p>Please put an image with an aspect ratio of 1:1, otherwise the image will get skewed.</p>
-                                </figure>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="submitModifiedChar">Submit</button>
                 </div>
             </div>
         </div>
@@ -144,7 +95,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editingModal" id="editBtn">Edit</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal">Edit</button>
                     <button type="submit" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                 </div>
             </div>
@@ -168,7 +119,7 @@
     </div>
     <header class="header py-5 text-center container">
         <h1 class="header__title">Hero Maker 3000</h1>
-        <p class="header__text">Character Management Application - <a href='https://becode.org/'>Becode.org</a> Project</p>
+        <p class="header__text">Character Management Application - <a href="https://becode.org/">Becode.org</a> Project</p>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newCharacterModal">
             Add New Character
         </button>
@@ -197,11 +148,11 @@
             </div>
         </div>
     </main>
-    <script type="module" src="../script/main.js"></script>
+    <script src="/index.8b6a1315.js" defer=""></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 <footer>
-    <p class="footer">Copyleft 2021 - <a href='https://github.com/JeanChristopheM'>JC Molhant</a> / <a href='https://github.com/GRaonix'>Raoni Gillet</a></p>Copyleft 2021
+    <p class="footer">Copyleft 2021 - <a href="https://github.com/JeanChristopheM">JC Molhant</a> / <a href="https://github.com/GRaonix">Raoni Gillet</a></p>Copyleft 2021
 </footer>
 
 </html>
