@@ -5,14 +5,24 @@ const getData = async () => {
     return await data.json();
 }
 
-const manageChar = async (charObj, method) => {
+const manageChar = async (charObj, method, id) => {
     let source;
     let deleteSource = src.concat('/', charObj);
     let options;
+    let putSource = src.concat('/', id);
 
     if (method === "DELETE") {
         source = deleteSource;
         options = {method: method};
+    } else if (method === "PUT"){
+        source = putSource;
+        options = {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(charObj)
+        }
     } else {
         source = src;
         options = {

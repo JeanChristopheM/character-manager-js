@@ -103,6 +103,8 @@ const app = async () => {
         element: document.getElementById('longDescriptionInput')
     });
     const modifyingMDE = new EasyMDE({
+        autofocus: true,
+        autoRefresh: { delay: 300 },
         toolbar: [
             {
                 name: "bold",
@@ -185,7 +187,33 @@ const app = async () => {
             
         }
     });
-
+    // EVENT LISTENER FOR THE MODIFYING IMAGE
+    let modifyingImage = document.querySelector('#modifyingImage');
+    modifyingImage.addEventListener('change', function (e) {
+        if (e.target.files) {
+            let imageFile = e.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var img = document.createElement("img");
+                img.onload = function (event) {
+                    // Dynamically create a canvas element
+                    var canvas = document.createElement("canvas");
+                    canvas.width = 100;
+                    canvas.height = 100;
+                    // var canvas = document.getElementById("canvas");
+                    var ctx = canvas.getContext("2d");
+                    // Actual resizing
+                    ctx.drawImage(img, 0, 0, 100, 100);
+                    // Show resized image in preview element
+                    var dataurl = canvas.toDataURL("image/jpg", 0.7);
+                    document.getElementById("modifyingPreview").src = dataurl;
+                }
+                img.src = e.target.result;
+            }
+            reader.readAsDataURL(imageFile);
+            
+        }
+    });
     // HANDLING THE CLICK ON SUBMIT NEW CHAR
     document.querySelector('#submitNewChar').addEventListener('click', () => {
         let newChar = {};
@@ -197,6 +225,7 @@ const app = async () => {
 
         let newSrc = document.querySelector('#preview').src;
         newChar.image = newSrc.slice(22, newSrc.length);
+        console.log(newChar);
         dbHandling.manageChar(newChar, 'POST');
     });
     // HANDLING THE DELETE BUTTON ON CHAR DELETION
@@ -204,18 +233,34 @@ const app = async () => {
         let id = moreDetailsModal.children[0].id;
         dbHandling.manageChar(id, 'DELETE');
     })
-
+    // HANDLING THE EDIT CHAR BTN
     document.querySelector('#editBtn').addEventListener('click', () => {
-        console.log("sending modified");
         let id = moreDetailsModal.children[0].id;
         let dbEntry = getSpecificPost(id);
         modifyingModal.querySelector('#modifyingNameTitle').textContent = dbEntry.name;
         modifyingModal.querySelector('#modifyingName').value = dbEntry.name;
         modifyingModal.querySelector('#modifyingShortDescription').value = dbEntry.shortDescription;
         modifyingMDE.value(converter.makeMarkdown(dbEntry.description));
-        //modifyingMDE.cm.refresh();
-        modifyingModal.querySelector('#modifyingPreview').src = `data:image;base64,${dbEntry.image}`;
+        modifyingModal.querySelector('#modifyingPreview').src = `data:image;base64,${dbEntry.image}`;        
     });
+    document.querySelector('#submitModifiedChar').addEventListener('click', () => {
+        let id = moreDetailsModal.children[0].id;
+        let modChar = {};
+        modChar.name = modifyingModal.querySelector('#modifyingName').value;
+        modChar.shortDescription = modifyingModal.querySelector('#modifyingShortDescription').value;
+        let mdText = modifyingMDE.value();
+        let htmlText = converter.makeHtml(mdText)
+        modChar.description = htmlText;
+
+        let newSrc = modifyingModal.querySelector('#modifyingPreview').src;
+        let tempSrc = newSrc.slice(18, newSrc.length);
+        if (tempSrc.slice(0,1) === "/") {
+            modChar.image = tempSrc;
+        } else {
+            modChar.image = tempSrc.slice(4, tempSrc.length);
+        }
+        dbHandling.manageChar(modChar, 'PUT', id);
+    })
 }    
 app();
 
