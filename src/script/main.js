@@ -1,49 +1,75 @@
-import * as dbHandling from './modules/dbHandling.mjs';
+import * as dbHandling from "./modules/dbHandling.mjs";
 const showdown = window.showdown;
 const converter = new showdown.Converter();
 
-
-
-
 const app = async () => {
-
-    
+    const searchBar = document.getElementById("searchBar");
     const moreDetailsModal = document.querySelector('#moreInfoModal');
     const database = await dbHandling.getData();
     const modifyingModal = document.querySelector('#editingModal');
-
+    searchBar.addEventListener("keyup", (e) => {
+        const searchString = e.target.value.toLowerCase();
+        let nomatch = [];
+        let match = [];
+        for (let item of database) {
+            if (
+                !item.name.toLowerCase().includes(searchString.toLowerCase()) &&
+                !item.description.toLowerCase().includes(searchString.toLowerCase()) &&
+                !item.shortDescription.toLowerCase().includes(searchString.toLowerCase())
+                
+            ) {
+                nomatch.push(item);
+            }
+            else {
+                match.push(item);
+            }
+        }
+        console.log(nomatch);
+        for (let item of nomatch) {
+            let element = document.getElementById(item.id);
+            element.parentNode.parentNode.parentNode.classList.add("hidden");
+        }
+        for (let item of match) {
+            let element = document.getElementById(item.id);
+            element.parentNode.parentNode.parentNode.classList.remove("hidden");
+        }
+    });
     // DISPLAYING DATABASE WITH TEMPLATES ONTO DOM
-    for(let item of database) {
-        let tpl = document.querySelector('#tpl');
+    for (let item of database) {
+        let tpl = document.querySelector("#tpl");
         let clone = document.importNode(tpl.content, true);
-        clone.querySelector('h2').textContent = item.name;
-        clone.querySelector('p').textContent = item.shortDescription;
-        clone.querySelector('img').src = `data:image;base64,${item.image}`;
-        clone.querySelector('button').id = item.id;
-        document.querySelector('#cardContainer').appendChild(clone);
+        clone.querySelector("h2").textContent = item.name;
+        clone.querySelector("p").textContent = item.shortDescription;
+        clone.querySelector("img").src = `data:image;base64,${item.image}`;
+        clone.querySelector("button").id = item.id;
+        document.querySelector("#cardContainer").appendChild(clone);
     }
     // FUNCTION TO GET THE SPECIFIC ITEM FROM THE DATABASE
     const getSpecificPost = (id) => {
         let match;
-        for(let item of database) {
-            if (item.id === id) {
-                match = item;
-            }
+        for (let item of database) {
+        if (item.id === id) {
+            match = item;
+        }
         }
         return match;
-    }
+    };
     // ADDING THE EVENT LISTENERS ON THE VIEW MORE BUTTONS
-    for (let item of document.querySelectorAll('.viewMore')) {
-        item.addEventListener('click', () => {
-            let id = item.id;
-            let dbEntry = getSpecificPost(id);
-            moreDetailsModal.children[0].id = id;
-            moreDetailsModal.querySelector('.titleName').textContent = dbEntry.name;
-            moreDetailsModal.querySelector('#detailsName').textContent = dbEntry.name;
-            moreDetailsModal.querySelector('#detailsShortDescription').textContent = dbEntry.shortDescription;
-            moreDetailsModal.querySelector('#detailsLongDescription').innerHTML = dbEntry.description;
-            moreDetailsModal.querySelector('#detailsPicture').src = `data:image;base64,${dbEntry.image}`;
-        })
+    for (let item of document.querySelectorAll(".viewMore")) {
+        item.addEventListener("click", () => {
+        let id = item.id;
+        let dbEntry = getSpecificPost(id);
+        moreDetailsModal.children[0].id = id;
+        moreDetailsModal.querySelector(".titleName").textContent = dbEntry.name;
+        moreDetailsModal.querySelector("#detailsName").textContent = dbEntry.name;
+        moreDetailsModal.querySelector("#detailsShortDescription").textContent =
+            dbEntry.shortDescription;
+        moreDetailsModal.querySelector("#detailsLongDescription").innerHTML =
+            dbEntry.description;
+        moreDetailsModal.querySelector(
+            "#detailsPicture"
+        ).src = `data:image;base64,${dbEntry.image}`;
+        });
     }
     // INITIALIZING THE MARKDOWN EDITOR
     const easyMDE = new EasyMDE({
@@ -263,5 +289,3 @@ const app = async () => {
     })
 }    
 app();
-
-

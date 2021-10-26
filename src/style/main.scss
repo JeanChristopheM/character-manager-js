@@ -3,11 +3,14 @@
 body {
     background: $clr-bg;
     background-repeat: no-repeat;
+    font-family: 'Bebas Neue', cursive;
 }
 .header {
     color: white;
     font-family: 'Bebas Neue', cursive;
 }
+.hidden
+{display : none;}
 .main {
     
     font-family: 'Bebas Neue', cursive;
@@ -50,6 +53,7 @@ body {
 
 #moreInfoModal {
     legend {
+      font-family: 'Bebas Neue', cursive;
         display: flex;
         justify-content: center;
         img {
@@ -59,6 +63,7 @@ body {
 }
 #newCharacterModal {
     #previewFigure {
+      font-family: 'Bebas Neue', cursive;
         margin-top: 1rem;
         display: flex;
         flex-wrap: wrap;
@@ -74,6 +79,7 @@ body {
     }
 }
 #editingModal {
+  font-family: 'Bebas Neue', cursive;
     #modifyingPreviewFigure {
         margin-top: 1rem;
         display: flex;
@@ -102,7 +108,8 @@ body {
     text-align: center;
     text-decoration: none;
     font-family: 'Bebas Neue', cursive;
-    letter-spacing: 5px;
+    font-size: 60px;
+    letter-spacing: 10px;
     animation: colorRotate 6s linear 0s infinite;
 }
 
@@ -124,9 +131,11 @@ body {
     }
 }
 #searchBar {
-    width: 100%;
+  
+    
+    width: 255px;
     height: 32px;
-    border-radius: 3px;
+    border-radius: 0.3em;
     border: 1px solid #eaeaea;
     padding: 5px 10px;
     font-size: 12px;
@@ -141,4 +150,59 @@ body {
     position: absolute;
     top: 7px;
     right: 15px;
+}
+
+//
+$color: #2194E0;
+
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+
+.wrapper {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.button {
+  padding: 0.75em 2em;
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.466);
+  border: 2px solid $color;
+  font-size: 24px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+  &:hover {
+    background-color: $color;
+    color: rgb(255, 255, 255);
+    border-bottom: 4px solid darken($color, 10%);
+    &:before {
+      transform: skewX(-45deg) translateX(13.5em);
+     transition: all 0.5s ease-in-out;
+    }
+  }
 }
