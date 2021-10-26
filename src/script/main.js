@@ -1,7 +1,13 @@
 import * as dbHandling from './modules/dbHandling.mjs';
 const showdown = window.showdown;
 const converter = new showdown.Converter();
+
+
+
+
 const app = async () => {
+
+    
     const moreDetailsModal = document.querySelector('#moreInfoModal');
     const database = await dbHandling.getData();
 
@@ -81,3 +87,21 @@ const app = async () => {
     })
 }    
 app();
+
+const searchBar = document.getElementById('searchBar');
+
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value.toLowerCase();
+
+    console.log(e);
+
+    const filteredCharacters = hpCharacters.filter((character) => {
+        return (
+            character.name.toLowerCase().includes(searchString) ||
+            character.house.toLowerCase().includes(searchString)
+        );
+    });
+    displayCharacters(filteredCharacters);
+});
+
+

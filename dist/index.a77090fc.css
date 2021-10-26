@@ -1,0 +1,103 @@
+@import "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap";
+@charset "UTF-8";
+body {
+  background: radial-gradient(ellipse at top, #1f3756, #141539);
+  background-repeat: no-repeat;
+}
+.header {
+  color: white;
+  font-family: "Bebas Neue", cursive;
+}
+.main {
+  font-family: "Bebas Neue", cursive;
+}
+.main__article {
+  margin-top: 75px;
+}
+.main__article .card {
+  position: relative;
+  padding-top: 50px;
+  min-height: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+.main__article .card:hover {
+  transform: scale(1.04);
+}
+.main__article .card h2 {
+  margin-top: 50px;
+  text-align: center;
+}
+.main__article .card figure {
+  position: absolute;
+  user-select: none;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main__article .card figure img {
+  border-radius: 0.3rem;
+}
+.main__article .card p {
+  margin-bottom: 3.5rem;
+}
+.main__article .card button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+#moreInfoModal legend {
+  display: flex;
+  justify-content: center;
+}
+#moreInfoModal legend img {
+  border-radius: 0.3rem;
+}
+#shadowBox {
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Black w/opacity/see-through */
+  border: 3px solid;
+}
+.footer, .header__title {
+  text-align: center;
+  text-decoration: none;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 5px;
+  animation: colorRotate 6s linear 0s infinite;
+}
+@keyframes colorRotate {
+  from {
+    color: #6666ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff00;
+  }
+  75% {
+    color: #ff3399;
+  }
+  100% {
+    color: #6666ff;
+  }
+}
+#searchBar {
+  width: 100%;
+  height: 32px;
+  border-radius: 3px;
+  border: 1px solid #eaeaea;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+#searchWrapper {
+  position: relative;
+}
+#searchWrapper::after {
+  content: "🔍";
+  position: absolute;
+  top: 7px;
+  right: 15px;
+}
+/*# sourceMappingURL=index.a77090fc.css.map */
