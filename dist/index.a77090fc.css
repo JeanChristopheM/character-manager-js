@@ -8,6 +8,9 @@ body {
   color: white;
   font-family: "Bebas Neue", cursive;
 }
+.hidden {
+  display: none;
+}
 .main {
   font-family: "Bebas Neue", cursive;
 }
@@ -51,6 +54,34 @@ body {
 }
 #moreInfoModal legend img {
   border-radius: 0.3rem;
+}
+#newCharacterModal #previewFigure {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#newCharacterModal #previewFigure img {
+  border-radius: 0.3rem;
+}
+#newCharacterModal #previewFigure p {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  flex: 1 0 100%;
+}
+#editingModal #modifyingPreviewFigure {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#editingModal #modifyingPreviewFigure img {
+  border-radius: 0.3rem;
+}
+#editingModal #modifyingPreviewFigure p {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  flex: 1 0 100%;
 }
 #shadowBox {
   background-color: black;
