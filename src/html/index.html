@@ -19,19 +19,6 @@
 
 
 </head>
-<header>
-
-    <div id="searchBox">
-        <input
-            type="text"
-            name="searchBar"
-            id="searchBar"
-            placeholder="search for a character"
-        />
-    </div>
-
-    
-</header>
 <body>
     <div class="modal fade" tabindex="-1" id="newCharacterModal">
         <div class="modal-dialog">
@@ -169,11 +156,20 @@
         </div>
     </div>
     <header class="header py-5 text-center container">
+        
         <h1 class="header__title">Hero Maker 3000</h1>
         <p class="header__text">Character Management Application - <a href='https://becode.org/'>Becode.org</a> Project</p>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newCharacterModal">
+        <button type="button" class="btn btn-primary button" data-bs-toggle="modal" data-bs-target="#newCharacterModal">
             Add New Character
         </button>
+        <div id="searchBox">
+            <input
+                type="text"
+                name="searchBar"
+                id="searchBar"
+                placeholder="search for a character"
+            />
+        </div>
     </header>
     <main class="main album py-5">
         <div class="container">

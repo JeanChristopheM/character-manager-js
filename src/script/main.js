@@ -261,3 +261,4 @@ const searchBar = document.getElementById("searchBar");
   });
 };
 app();
+
